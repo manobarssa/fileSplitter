@@ -40,6 +40,12 @@ def joiner(files):
 def main():
     parser = argparse.ArgumentParser(description= ''' 
     Split a file into n parts or join n parts into a file.''')
+    
+    #General arguments    
+    parser.add_argument('-f', dest='file', metavar='File Path', type=str, 
+                        help='Path to file that will be splited.')
+    parser.add_argument('mode', metavar='MODE', type=str,
+                        help='split or join')
         
     #Chunk or n group arguments
     chorn = parser.add_mutually_exclusive_group()
@@ -48,11 +54,7 @@ def main():
     chorn.add_argument('-n', dest='nparts', metavar='n_parts', type=int,
                        help='Number of parts in which the file will be splited.')
     
-    #General arguments    
-    parser.add_argument('-f', dest='file', metavar='File Path', type=str, 
-                        help='Path to file that will be splited.')
-    parser.add_argument('-m', dest='mode', metavar='Mode', type=str,
-                        help='Splitter (s) or Joiner (j).', required=True)
+    
     
             
     args = parser.parse_args()
@@ -70,7 +72,7 @@ def main():
             chunk = chunkInt + 1        
     
     #Splits the file    
-    if args.mode.lower() == 's':
+    if args.mode.lower() == 'split':
         path = args.file        
         splitter(path,chunk)
     else:
