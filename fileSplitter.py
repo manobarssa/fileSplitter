@@ -60,7 +60,7 @@ def main():
     if args.chunk is not None:
         chunk = args.chunk
     elif args.nparts is not None:
-        n = args.n_parts
+        n = args.nparts
         file_size = os.path.getsize(args.file)
         chunkInt = file_size//n
         chunkDec = (file_size/n) - (chunkInt)
