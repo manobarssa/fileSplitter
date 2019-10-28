@@ -12,3 +12,4 @@
   <p>-n <b>n_parts</b>     Number of parts in which the file will be splited.</p>
   <p> </p>
   <p>To join files, one must run the script from a directory that has all the files to be joined and nothing else.</p>
+  <p>Ex.:python fileSplitter.py split \path\to\file -n 10       Split the file in 10 parts and write to local folder \[filename]_SPLITTED</p>
