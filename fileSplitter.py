@@ -13,8 +13,8 @@ def splitter(path, chunk):
         fb = f.read(chunk)
         count = 0
         basename = os.path.basename(path)
-        os.mkdir(basename+'_SPLITED')
-        os.chdir(basename+'_SPLITED')
+        os.mkdir(basename+'_SPLITTED')
+        os.chdir(basename+'_SPLITTED')
         while len(fb) > 0:
             if count < 10:
                 cname = '0' + str(count)
@@ -25,7 +25,7 @@ def splitter(path, chunk):
             fb = f.read(chunk)
             count+=1
         os.chdir('..')
-        return print('File parts written to {} folder.'.format(basename+'_SPLITED'))
+        return print('File parts written to {} folder.'.format(basename+'_SPLITTED'))
 
 def joiner(files):
     fn = files[0]
@@ -52,7 +52,7 @@ def main():
     chorn.add_argument('-c', dest='chunk', metavar='Chunk Size', type=int,
                        help='Chunk size in bytes.')
     chorn.add_argument('-n', dest='nparts', metavar='n_parts', type=int,
-                       help='Number of parts in which the file will be splited.')
+                       help='Number of parts in which the file will be splitted.')
     
     
     
